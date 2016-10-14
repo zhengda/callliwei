@@ -1,0 +1,130 @@
+@(list: List[Liwei])
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+    <meta cahrset="utf-8"/>
+    <meta http-equiv="'X-UA-Compatible" content="'IE=edge"/>
+    <meta content="width=device-width,initial-scale=1" name=viewport>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content=""/>
+    <meta name="author" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:type" content=""/>
+    <meta property="og:title" content=""/>
+    <meta property="og:description" content=""/>
+
+    <title>callliwei</title>
+    <link ref="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link href="assets/css/docs.min.css" rel="stylesheet">
+    <style type="text/css">
+	div#picContainer {width:150px;}
+	img.picUrl {max-width:100%;}
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async="" src="assets/js/qa.js"></script>
+    <script>
+    </script>
+</head>
+
+
+<body data-twttr-rendered="true" class="bs-docs-home">
+<a class="sr-only sr-only -focusable" href="#content">goto #content</a>
+<header class="bs-docs-nav navbar navbar-static-top" id="top">
+    <div class="container">
+        <div class="navbar-header">
+            <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle"
+                    data-target="#bs-navbar" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+            <a href="/" class="navbar-brand">Callliwei</a></div>
+        <nav class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="nav navbar-nav">
+                <li>
+                    <form class="navbar-form" role="search" action="list">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" name="q">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </li>
+                <li><a href="list">全部列表</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="about"
+                       onclick="ga(&quot;send&quot;,&quot;event&quot;,&quot;Navbar&quot;,&quot;Community links&quot;,&quot;Blog&quot;)">About</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main class="bs-docs-masthead" id="content" tabindex="-1">
+    <h1>Hello Callliwei</h1>
+    <div class="container">
+        <p class="lead">"立委咖電喂"收集並提供詳極的立法委員連絡方式，讓選民有意見一定能找到人。</p>
+        <p class="lead"><a href="list" class="btn btn-outline-inverse btn-lg"
+                           onclick="ga(&quot;send&quot;,&quot;event&quot;,&quot;Jumbotron actions&quot;,&quot;Download&quot;,&quot;Download 3.3.7&quot;)">全部列表</a></p>
+    </div>
+</main>
+<div class="bs-docs-featurette">
+    <div class="container"><h2 class="bs-docs-featurette-title">Connect with Callliwei.</h2>
+        <p class="lead">上百位立法委員的連絡方法盡在手中。不管你是粉絲還是暴民，趕快試試看。</p>
+        <hr class="half-rule">
+        <div class="row bs-docs-featured-sites">
+            @list.map{liwei=>
+            <div class="col-xs-6 col-sm-3">
+                <a href="profile?name=@liwei.name" title="@liwei.name">
+                    <img alt="@liwei.name" src="@liwei.picurl" class="img-responsive"> </a></div>
+            }
+        </div>
+    </div>
+</div>
+<div class="bs-docs-featurette">
+    <div class="container"><h2 class="bs-docs-featurette-title">還有更多國會立法相關的資料是不是要看看</h2>
+        <hr class="half-rule">
+        <div class="row">
+            <div class="col-sm-4">
+                <img alt="ly.g0v.tw" src="http://g0v.tw/imgs/projectimg/ly.png" class="img-responsive">
+                <h3>國會大代誌 <a href="ly.g0v.tw">ly.g0v.tw</a></h3>
+                <p>持續開發的開放國會長期計畫。
+                    可即時顯示國會行程、修法進度、法條版本比較，還推播到 Twitter 供人訂閱。除了文字之外還整合了國會影像，標示每一位委員的發言時間供搜尋。</p></div>
+            <div class="col-sm-4">
+                <img alt="vote.ly.g0v.tw" src="http://g0v.tw/imgs/projectimg/vote.png" class="img-responsive">
+                <h3>立委投票指難 <a href="vote.ly.g0v.tw">vote.ly.g0v.tw</a></h3>
+                <p>替立委排名，依數據列出缺席、不投票、脫黨跑票、修正法案數、臨時提案數等的立委排行。也提供表決視覺化名單，表決、法案、臨時提案的關鍵字搜尋。</p></div>
+            <div class="col-sm-4">
+                <img alt="vote.ly.g0v.tw" src="http://data.ly.gov.tw/images/logo.png" class="img-responsive">
+                <h3>立法院開放資料服務平台 <a href="http://data.ly.gov.tw/">http://data.ly.gov.tw/</a></h3>
+                <p>立法院開放資料服務平台提供各式立法院資訊，提供民眾或院外單位進行下載或透過API方式進行介接，以進行加值應用程式之開發。</p></div>
+        </div>
+        <hr class="half-rule">
+        <p class="lead">更多更多。立院相關的及其他。</p> <a href="http://g0v.tw/zh-TW/projects.html" class="btn btn-outline btn-lg">View the g0v projects</a>
+    </div>
+</div>
+<footer class="bs-docs-footer">
+    <div class="container">
+        <ul class="bs-docs-footer-links">
+            <li><a href="https://github.com/zhengda/callliwei">GitHub</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+        <p>Licensed <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="license">CC BY 4.0</a>.</p>
+    </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery||document.write('<script src="assets/js/jquery.min.js"><\/script>')</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="assets/js/docs.min.js"></script>
+<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
