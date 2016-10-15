@@ -1,4 +1,4 @@
-@(liwei:Liwei)
+@(liwei:LiweiX)
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
@@ -22,6 +22,8 @@
     <link type="text/css" rel="stylesheet" href="assets/css/profile.css">
     <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
     <style type="text/css">
+        li.clw-listitem{  font-size:150%;  }
+
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -84,24 +86,27 @@
 
         <div id="contactDetails">
             <ul>
-                @if(liwei.lineid contains "/"){
-                <li>line: @liwei.lineid</li>
-                }else{
                 @if(liwei.lineid!=""){
-                <li>line: <a href="http://line.me/ti/p/@liwei.lineid">@liwei.lineid</a></li>
-                }
+                <li class="clw-listitem">line: <a href="http://line.me/ti/p/@liwei.lineid">@liwei.lineid</a>
+                    @if(liwei.lineid2!=""){
+                    <a href="http://line.me/ti/p/@liwei.lineid2">@liwei.lineid2</a>
+                    }
+                </li>
                 }
                 @if(liwei.labtel!=""){
-                <li>tel: <a href="tel:@liwei.labtel">@liwei.labtel</a></li>
+                <li class="clw-listitem"><a href="tel:@liwei.labtel">@liwei.labtel</a></li>
                 }
                 @if(liwei.email!=""){
-                <li>email: <a href="mailto:@liwei.email" target="_blank">@liwei.email</a></li>
+                <li class="clw-listitem"><a href="mailto:@liwei.email" target="_blank">@liwei.email</a></li>
                 }
                 @if(liwei.facebook!=""){
-                <li>facebook: <a href="@liwei.facebook">@liwei.facebook</a></li>
+                <li class="clw-listitem"><a href="@liwei.facebook">@liwei.facebook</a></li>
+                }
+                @if(liwei.facebook2!=""){
+                <li class="clw-listitem"><a href="@liwei.facebook2">@liwei.facebook2</a></li>
                 }
                 @if(liwei.wiki!=""){
-                <li>wiki: <a href="@liwei.wiki">@liwei.wiki</a></li>
+                <li class="clw-listitem"><a href="@liwei.wiki">@liwei.wiki</a></li>
                 }
             </ul>
         </div>
