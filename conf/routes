@@ -4,5 +4,3 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET     /about                           controllers.Application.about
 GET     /list                           controllers.Application.list(q:Option[String])
 GET     /profile                           controllers.Application.profile(name:String)
-
-

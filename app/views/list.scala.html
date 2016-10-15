@@ -53,7 +53,8 @@
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search" name="q">
                             <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i>
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -70,12 +71,12 @@
 <main id="content" role="main">
     <div class="container">
         <ul>
-        @list.map{item=>
+            @list.map{item=>
             <li><a href="profile?name=@item.name">@item.name</a>
                 <a href="mailto:@item.email">@item.email</a>
                 <a href="tel:@item.labtel">@item.labtel</a>
                 <a href="http://line.me/ti/p/@item.lineid">@item.lineid</a></li>
-        }
+            }
         </ul>
     </div>
 </main>
@@ -86,7 +87,8 @@
             <li><a href="https://github.com/zhengda/callliwei">GitHub</a></li>
             <li><a href="about">About</a></li>
         </ul>
-        <p>Licensed <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="license">CC BY 4.0</a>.</p>
+        <p>Licensed <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="license">CC BY 4.0</a>.
+        </p>
     </div>
 </footer>
 
