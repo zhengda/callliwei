@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link href="assets/css/docs.min.css" rel="stylesheet">
     <style type="text/css">
+        a.clw-listitem{  font-size:120%;  }
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -72,10 +73,14 @@
     <div class="container">
         <ul>
             @list.map{item=>
-            <li><a href="profile?name=@item.name">@item.name</a>
-                <a href="mailto:@item.email">@item.email</a>
-                <a href="tel:@item.labtel">@item.labtel</a>
-                <a href="http://line.me/ti/p/@item.lineid">@item.lineid</a></li>
+            <li><a class="clw-listitem" href="profile?name=@item.name">@item.name</a>
+                <a class="clw-listitem" href="mailto:@item.email">@item.email</a>
+                <a class="clw-listitem" href="tel:@item.labtel">@item.labtel</a>
+                @if(item.lineid contains "/"){
+                @item.lineid</a>
+                }else{
+                <a class="clw-listitem" href="http://line.me/ti/p/@item.lineid">@item.lineid</a></li>
+                }
             }
         </ul>
     </div>

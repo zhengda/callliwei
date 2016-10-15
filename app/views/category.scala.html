@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link href="assets/css/docs.min.css" rel="stylesheet">
     <style type="text/css">
+        a.clw-category{  font-size:150%;  }
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -74,7 +75,7 @@
     <div class="container">
         <ul>
             @list.map{item=>
-            <a size="@item.quantity" href="profile?name=@item.name">@item.name</a>
+            <a class="clw-category" xxsize="@item.quantity" href="list?category=@item.name">@item.name</a>
             }
         </ul>
     </div>

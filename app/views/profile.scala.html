@@ -84,8 +84,12 @@
 
         <div id="contactDetails">
             <ul>
+                @if(liwei.lineid contains "/"){
+                <li>line: @liwei.lineid</li>
+                }else{
                 @if(liwei.lineid!=""){
                 <li>line: <a href="http://line.me/ti/p/@liwei.lineid">@liwei.lineid</a></li>
+                }
                 }
                 @if(liwei.labtel!=""){
                 <li>tel: <a href="tel:@liwei.labtel">@liwei.labtel</a></li>
