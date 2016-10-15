@@ -14,7 +14,8 @@
     <meta property="og:title" content=""/>
     <meta property="og:description" content=""/>
 
-    <title>callliwei</title>
+    <title>Callliwei 立委咖電喂</title>
+    <link href=assets/images/favicon.png rel=icon>
     <link ref="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
@@ -38,22 +39,22 @@
 
 <body data-twttr-rendered="true" class="bs-docs-home">
 <a class="sr-only sr-only -focusable" href="#content">goto #content</a>
-
-<header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+<header class="bs-docs-nav navbar navbar-static-top" id="top">
     <div class="container">
         <div class="navbar-header">
-            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
-                    data-target=".bs-navbar-collapse"><span class="sr-only">巡覽切換</span> <span class="icon-bar"></span>
-                <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+            <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle"
+                    data-target="#bs-navbar" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
             <a href="/" class="navbar-brand">Callliwei</a></div>
-        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <nav class="collapse navbar-collapse" id="bs-navbar">
             <ul class="nav navbar-nav">
                 <li>
-                    <form class="navbar-form" role="search">
+                    <form class="navbar-form" role="search" action="list">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search" name="q">
                             <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i>
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -61,111 +62,83 @@
                 <li><a href="list">全部列表</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="about">About</a></li>
+                <li><a href="about"
+                       onclick="ga(&quot;send&quot;,&quot;event&quot;,&quot;Navbar&quot;,&quot;Community links&quot;,&quot;Blog&quot;)">About</a>
+                </li>
             </ul>
         </nav>
     </div>
 </header>
+<div class=bs-docs-header id=content tabindex=-1>
+    <div class=container><h1>About</h1>
+        <p>"立委咖電喂" 的相關記錄、供獻者以及專案</p>
+    </div>
+</div>
+<div class="container bs-docs-container">
+    <div class=row>
+        <div class=col-md-9 role=main>
+            <div class=bs-docs-section><h1 class=page-header id=history>History</h1>
+                <p class=lead>最開始是在2016年初由Fumi發起建立第九屆立委連絡資料，之後經歷數個月總算有個比較完整的資料集了。很棒。</p>
+                <p>現在這個系統是在2016年10月中第一版完成。</p>
+                <p>集中資料的<a href="https://g0v.hackpad.com/t5nla4R4Dft">hackpad</a></p>
+                <p>商討中心的<a href="https://g0v-tw.slack.com/messages/call-liwei/">Slack</a></time>
+            </div>
+            <div class=bs-docs-section><h1 class=page-header id=team>Contributors</h1>
+                <p class=lead>"立委咖電喂"由許多人供獻心力而成，無法表列所有人。以下只列出系統或內容有問題時，你可以通知的人等。</p>
+                <div class="bs-team list-group">
+                    <div class=list-group-item><a href=https://g0v-tw.slack.com/team/fumi class=team-member> <strong>Fumi</strong></a>
+                    </div>
+                    <div class=list-group-item><a href=https://github.com/zhengda class=team-member>
+                        <strong>Leon</strong></a></div>
+                    <div class=list-group-item><a href="" class=team-member> <strong>陳東</strong></a></div>
+                    <div class=list-group-item><a href="" class=team-member> <strong>Hong</strong></a></div>
+                    <div class=list-group-item><a href=https://github.com/meisheep class=team-member>
+                        <strong>meisheep</strong></a></div>
+                    <div class=list-group-item><a href="" class=team-member> <strong>Glyn</strong></a></div>
+                    <div class=list-group-item><a href="" class=team-member> <strong>子魚</strong></a></div>
+                    <div class=list-group-item><a href="" class=team-member> <strong>iflin</strong></a></div>
+                    <div class=list-group-item><a href="" class=team-member> <strong>soidid</strong></a></div>
+                    <div class=list-group-item><a href="" class=team-member> <strong>leo424y</strong></a></div>
+                </div>
+                <p>Get involved with Callliwei development by <a href=https://github.com/zhengda/callliwei/issues/new>opening
+                    an issue</a></p>
 
-<main class="bs-docs-masthead" id="content" role="main">
-    <div class="container"><span class="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline">B</span>
-        <p class="lead">Bootstrap 3是最受歡迎的 HTML、CSS 和 JS 框架，用於開發自適應網頁與以行動優先的網站專案。</p>
-        <p id="eventTest"></p>
-        <p class="lead"><a class="btn btn-outline-inverse btn-lg" href="GettingStarted#download">下載 Bootstrap 3</a>
-        </p>
-        <p class="version">翻譯版本 v3.3.1</p>
-        <div id="carbonads-container">
-            <div class="carbonad">
-                <div id="azcarbon"><span> <span class="carbonad-image carbonad-image carbonad-img"><script
-                        src="https://skilltree.azurewebsites.net/feed/Promotion?w=200">
+                <div class=bs-docs-section><h1 class=page-header id=brand>Related Projects</h1>
+                    <h2>初期開發相關repository</h2>
+                    <p>https://github.com/hong19/legislator-call</p>
+                    <p>https://meisheep.github.io/g0v-call-liwei/#/</p>
 
-    </script>
-
-    <a href="https://skilltree.my/events/kafa" target="_blank"><img
-            src="https://az739793.vo.msecnd.net/event/3d4bed7b-0514-4802-8363-9fa9dc5c9b74s.png?v=636107218108530000"
-            width="200" alt="使用 Xamarin 探索全平台 APP 開發"></a>
-    </span> <span class="carbonad-text">SkillTree 與一般補習班不同，我們都是擁有豐富經驗的業界講師，教您如何上場殺敵，拳拳到肉的課程內容剛好是我們擅長的。&#65279;</span>
-    <span
-            class="carbonad-tag">ads via <a href="http://skilltree.my" target="_blank"
-                                            rel="external">SkillTree</a></span> </span>
+                    <h2>參考資料網 </h2>
+                    <p>社團法人公民監督聯盟 https://sites.google.com/site/ccwdata/monitoring/whosmylegislator</p>
+                    <p>立委聯絡資訊 http://billy3321.github.io/lytel/</p>
+                    <p>「123。打。道。掛。」 http://123.g0v.today/ https://g0v.hackpad.com/123-0IiNSlxKI5a</p>
+                    <p>立法院開放資料服務平台 http://data.ly.gov.tw/getds.action?id=9</p>
+                    <p>立委投票指南 http://vote.ly.g0v.tw/</p>
                 </div>
             </div>
         </div>
-    </div>
-</main>
-<div class="bs-docs-featurette">
-    <div class="container"><h2 class="bs-docs-featurette-title">為每一人，每一種應用所設計。</h2>
-        <p class="lead">Bootstrap 3讓前端開發更快與簡單。讓所有人都能容易上手，所有設備都能合適，所有專案都能適用。</p>
-        <hr class="half-rule">
-        <div class="row">
-            <div class="col-sm-4"><img src="/Content/AssetsBS3/img/sass-less.png" alt="Sass and Less support"
-                                       class="img-responsive">
-                <h3>前置處理器</h3>
-                <p>Bootstrap 雖然發行為一般的 CSS，但它的原始程式碼是基於兩個流行的 CSS 前置處理器，<a href="CSS#less">Less</a> 和 <a
-                        href="CSS#sass">Sass</a>。你可以選擇使用預編譯的 CSS 來快速上手或從原始程式碼建置自己的版本。</p></div>
-            <div class="col-sm-4"><img src="/Content/AssetsBS3/img/devices.png" alt="Responsive across devices"
-                                       class="img-responsive">
-                <h3>一個框架，所有設備</h3>
-                <p>Bootstrap 3 能基於一份程式碼而簡易且有效的擴展你的網站和應用程式， 利用 CSS 媒體查詢（Media Query）來處理手機、平板到桌上電腦各種平台。</p></div>
-            <div class="col-sm-4"><img src="/Content/AssetsBS3/img/components.png" alt="Components"
-                                       class="img-responsive">
-                <h3>功能齊全</h3>
-                <p>在 Bootstrap 3，有全面且美觀的文件，你可以得到常見 HTML 元素、若干自訂 HTML 和 CSS 元件和棒極的 jQuery 外掛。</p></div>
+        <div class=col-md-3 role=complementary>
+            <nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs">
+                <ul class="nav bs-docs-sidenav">
+                    <li><a href=#history>History</a></li>
+                    <li><a href=#team>Contributors</a></li>
+                    <li><a href=#brand>Related Projects</a></li>
+                </ul>
+                <a href=#top class=back-to-top> Back to top </a></nav>
         </div>
-        <hr class="half-rule">
-        <p class="lead">Bootstrap 3是開放源始碼。它托管、開發、維護在 GitHub。</p><a href="https://github.com/twbs/bootstrap"
-                                                                   class="btn btn-outline btn-lg">瀏覽 GitHub 專案</a>
     </div>
 </div>
-<div class="bs-docs-featurette">
-    <div class="container"><h2 class="bs-docs-featurette-title">基於 Bootstrap 建置</h2>
-        <p class="lead">數以百萬的網站都是基於 Bootstrap 建置。 你可以瀏覽我們不斷 <a href="GettingStarted#examples">收藏的範例</a>，或是探索一些我們的最愛。
-        </p>
-        <hr class="half-rule">
-        <div class="row bs-docs-featured-sites">
-            <div class="col-xs-6 col-sm-3"><a href="http://expo.getbootstrap.com/2014/10/29/lyft" target="_blank"
-                                              title="Lyft"> <img alt="Lyft" class="lazy img-responsive"
-                                                                 data-original="/Images/expo/lyft-thumb.jpg"
-                                                                 height="525" width="700"
-                                                                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
-            </a></div>
-            <div class="col-xs-6 col-sm-3"><a href="http://expo.getbootstrap.com/2014/09/30/vogue" target="_blank"
-                                              title="Vogue"> <img alt="Vogue" class="lazy img-responsive"
-                                                                  data-original="/Images/expo/vogue-thumb.jpg"
-                                                                  height="525" width="700"
-                                                                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
-            </a></div>
-            <div class="col-xs-6 col-sm-3"><a href="http://expo.getbootstrap.com/2014/03/13/riot-design"
-                                              target="_blank" title="Riot Design"> <img alt="Riot Design"
-                                                                                        class="lazy img-responsive"
-                                                                                        data-original="/Images/expo/riot-thumb.jpg"
-                                                                                        height="525" width="700"
-                                                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
-            </a></div>
-            <div class="col-xs-6 col-sm-3"><a href="http://expo.getbootstrap.com/2014/02/12/newsweek"
-                                              target="_blank"
-                                              title="Newsweek"> <img alt="Newsweek" class="lazy img-responsive"
-                                                                     data-original="/Images/expo/newsweek-thumb.jpg"
-                                                                     height="525" width="700"
-                                                                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
-            </a></div>
-        </div>
-        <hr class="half-rule">
-        <p class="lead">我們展示基於 Bootstrap 3 建置的若干具有啟發性專案在 Bootstrap 3 精選。</p><a href="http://expo.getbootstrap.com"
-                                                                               class="btn btn-outline btn-lg">探索
-            Bootstrap 3 精選</a></div>
-</div>
-
 <footer class="bs-docs-footer">
     <div class="container">
         <ul class="bs-docs-footer-links">
-            <li><a href="https://github.com/zhengda/callliwei">GitHub</a></li>
+            <li><a href="/callliwei">GitHub</a></li>
             <li><a href="about">About</a></li>
         </ul>
-        <p>Licensed <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="license">CC BY 4.0</a>.</p>
+        <p>Licensed <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="license">CC BY
+            4.0</a>.
+        </p>
     </div>
 </footer>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>window.jQuery||document.write('<script src="assets/js/jquery.min.js"><\/script>')</script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

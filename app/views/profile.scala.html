@@ -14,7 +14,8 @@
 	<meta property="og:title" content=""/>
 	<meta property="og:description" content=""/>
 
-	<title>Joe Bloggs - Curriculum Vitae</title>
+	<title>Callliwei 立委咖電喂</title>
+	<link href=assets/images/favicon.png rel=icon>
 	<link ref="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link href="assets/css/docs.min.css" rel="stylesheet">
@@ -49,7 +50,7 @@
 		<nav class="collapse navbar-collapse" id="bs-navbar">
 			<ul class="nav navbar-nav">
 				<li>
-					<form class="navbar-form" role="search">
+					<form class="navbar-form" role="search" action="list">
 						<div class="input-group">
 							<input type="text" class="form-control" placeholder="Search" name="q">
 							<div class="input-group-btn">
@@ -86,7 +87,7 @@
 				@if(liwei.labtel!=""){<li>tel: <a href="tel:@liwei.labtel">@liwei.labtel</a></li>}
 				@if(liwei.email!=""){<li>email: <a href="mailto:@liwei.email" target="_blank">@liwei.email</a></li>}
 				@if(liwei.facebook!=""){<li>facebook: <a href="@liwei.facebook">@liwei.facebook</a></li>}
-				@if(liwei.wiki!=""){<li>wiki: <a href="@liwei.facebook">@liwei.wiki</a></li>}
+				@if(liwei.wiki!=""){<li>wiki: <a href="@liwei.wiki">@liwei.wiki</a></li>}
 			</ul>
 		</div>
 		<div class="clear"></div>

@@ -14,14 +14,13 @@
     <meta property="og:title" content=""/>
     <meta property="og:description" content=""/>
 
-    <title>callliwei</title>
+    <title>Callliwei 立委咖電喂</title>
+    <link href=assets/images/favicon.png rel=icon>
     <link ref="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link href="assets/css/docs.min.css" rel="stylesheet">
     <style type="text/css">
-	div#picContainer {width:150px;}
-	img.picUrl {max-width:100%;}
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -81,7 +80,7 @@
     <div class="container"><h2 class="bs-docs-featurette-title">Connect with Callliwei.</h2>
         <p class="lead">上百位立法委員的連絡方法盡在手中。不管你是粉絲還是暴民，趕快試試看。</p>
         <hr class="half-rule">
-        <div class="row bs-docs-featured-sites">
+        <div class="row bs-docs-featured-sites" id="liweiList">
             @list.map{liwei=>
             <div class="col-xs-6 col-sm-3">
                 <a href="profile?name=@liwei.name" title="@liwei.name">
