@@ -84,49 +84,49 @@ class Application @Inject()(db: Database, dbapi: DBApi) extends Controller {
 
   def index = Action {
     //    val db = dbapi.database("default")
-    db.withConnection { implicit c =>
-      val result: Boolean = SQL("Select 1").execute()
-      println(result)
-    }
-    db.withConnection { implicit c =>
-      val result = SQL("Select * from User").execute()
-      println(result)
-    }
-    var name = "";
-    var picUrl = "";
-    db.withConnection { implicit conn =>
-      val st = conn.createStatement()
-      val res = st.executeQuery("SELECT * FROM t9a")
-      var i: Int = 0
-      while (res.next()) {
-        i += 1
-        print(i)
-        print(" ")
-        print(res.getString("term"))
-        print(" ")
-        print(res.getString("name"))
-        print(" ")
-        print(res.getString("ename"))
-        print(" ")
-        println(res.getString("LineID"))
-        if (i == 1) {
-          name = res.getString("name")
-          picUrl = res.getString("picurl")
-        }
-      }
-    }
+//    db.withConnection { implicit c =>
+//      val result: Boolean = SQL("Select 1").execute()
+//      println(result)
+//    }
+//    db.withConnection { implicit c =>
+//      val result = SQL("Select * from User").execute()
+//      println(result)
+//    }
+//    var name = "";
+//    var picUrl = "";
+//    db.withConnection { implicit conn =>
+//      val st = conn.createStatement()
+//      val res = st.executeQuery("SELECT * FROM t9a")
+//      var i: Int = 0
+//      while (res.next()) {
+//        i += 1
+//        print(i)
+//        print(" ")
+//        print(res.getString("term"))
+//        print(" ")
+//        print(res.getString("name"))
+//        print(" ")
+//        print(res.getString("ename"))
+//        print(" ")
+//        println(res.getString("LineID"))
+//        if (i == 1) {
+//          name = res.getString("name")
+//          picUrl = res.getString("picurl")
+//        }
+//      }
+//    }
 
-    db.withConnection { conn =>
-      val st = conn.createStatement()
-      val res = st.executeQuery("SELECT * FROM PLAY_EVOLUTIONS")
-      while (res.next()) {
-        print(res.getInt("id"))
-        print(" ")
-        print(res.getString("hash"))
-        print(" ")
-        println(res.getString("state"))
-      }
-    }
+//    db.withConnection { conn =>
+//      val st = conn.createStatement()
+//      val res = st.executeQuery("SELECT * FROM PLAY_EVOLUTIONS")
+//      while (res.next()) {
+//        print(res.getInt("id"))
+//        print(" ")
+//        print(res.getString("hash"))
+//        print(" ")
+//        println(res.getString("state"))
+//      }
+//    }
 
     //    import java.util.Date
     //    import java.text.SimpleDateFormat
