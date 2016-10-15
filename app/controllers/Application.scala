@@ -23,6 +23,12 @@ class Application @Inject()(db: Database, dbapi: DBApi) extends Controller {
     Ok(views.html.about())
   }
 
+  def category(q: Option[String]) = Action {
+    //TODO
+    val x = List(Category("test"), Category("a1"), Category("c3"))
+    Ok(views.html.category(x))
+  }
+
   def list(q: Option[String]) = Action {
     import anorm.{Macro, RowParser}
     db.withConnection { implicit conn =>
@@ -65,3 +71,7 @@ class Application @Inject()(db: Database, dbapi: DBApi) extends Controller {
 }
 
 case class Liwei(term: String, name: String, ename: String, sex: String, party: String, partygroup: String, areaname: String, district: String, email: String, committee: String, onboarddate: String, degree: String, profession: String, experience: String, alltel: String, labtel: String, servicetel1: String, servicetel2: String, servicetel3: String, servicetel4: String, servicetel5: String, labfax: String, servicefax1: String, servicefax2: String, servicefax3: String, servicefax4: String, servicefax5: String, picurl: String, leavedate: String, alladdr: String, labaddr: String, serviceaddr1: String, serviceaddr2: String, serviceaddr3: String, serviceaddr4: String, serviceaddr5: String, facebook: String, wiki: String, lineid: String)
+
+case class Category(name: String, quantity: Int = 0)
+
+case class Tag(name: String, quantity: Int)
