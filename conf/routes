@@ -1,5 +1,6 @@
 GET     /                           controllers.Application.index
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /googled119306f826174e7.html    controllers.Assets.at(path="/public/html", file="googled119306f826174e7.html")
 
 GET     /about                           controllers.Application.about
 GET     /profile                           controllers.Application.profile(name:String)
