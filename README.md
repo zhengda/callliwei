@@ -8,6 +8,13 @@ sbt 0.13.11
 activator 1.3.10
 play 2.5.8
 
+#components
+play
+anorm
+h2
+bootstrap
+GA
+
 ##installation
 TODO
 
