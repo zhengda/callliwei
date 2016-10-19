@@ -1,7 +1,7 @@
 callliwei project
 ---
 ##project information
-see http://beta.hackfoldr.org/call-liwei
+see http://beta.hackfoldr.org/callliwei
 ##enviroment
 java 1.8.0_92
 scala 2.11.8
