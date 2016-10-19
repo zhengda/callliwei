@@ -1,6 +1,7 @@
 callliwei project
 ---
-
+##project information
+see http://beta.hackfoldr.org/call-liwei
 ##enviroment
 java 1.8.0_92
 scala 2.11.8
@@ -23,7 +24,7 @@ TODO
 
 ##dataset
 想要資料不用爬，直接拿data/t9a.h2.csv就是系統所使用最新的資料集。
-@see data/README.md for more description.
+see data/README.md for more information.
 
 ##system architecture
 ###database
