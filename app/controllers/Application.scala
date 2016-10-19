@@ -52,8 +52,8 @@ class Application @Inject()(db: Database, dbapi: DBApi) extends Controller {
       val parser: RowParser[Liwei] = Macro.indexedParser[Liwei]
       val x: Liwei = SQL(
         """
-           select * from t9a where name={name}
-        """).on("name" -> name).as(parser.single)
+           select * from t9a where name={name} or ename={ename}
+        """).on("name" -> name,"ename" -> name).as(parser.single)
       Ok(views.html.profile(repack(x)))
     }
   }
@@ -90,8 +90,10 @@ class Application @Inject()(db: Database, dbapi: DBApi) extends Controller {
       lineid = lineid.substring(0, lineid.lastIndexOf("/"))
     }
 
+    val labtel = x.labtel.replace("國會辦公室：","");
+
     val wiki = URLDecoder.decode(x.wiki, "utf8")
-    LiweiX(x.term, x.name, x.ename, x.sex, x.party, x.partygroup, x.areaname, x.district, email, x.committee, x.onboarddate, x.degree, x.profession, x.experience, x.alltel, x.labtel, x.servicetel1, x.servicetel2, x.servicetel3, x.servicetel4, x.servicetel5, x.labfax, x.servicefax1, x.servicefax2, x.servicefax3, x.servicefax4, x.servicefax5, x.picurl, x.leavedate, x.alladdr, x.labaddr, x.serviceaddr1, x.serviceaddr2, x.serviceaddr3, x.serviceaddr4, x.serviceaddr5, facebook, wiki, lineid, facebook2, lineid2)
+    LiweiX(x.term, x.name, x.ename, x.sex, x.party, x.partygroup, x.areaname, x.district, email, x.committee, x.onboarddate, x.degree, x.profession, x.experience, x.alltel, labtel, x.servicetel1, x.servicetel2, x.servicetel3, x.servicetel4, x.servicetel5, x.labfax, x.servicefax1, x.servicefax2, x.servicefax3, x.servicefax4, x.servicefax5, x.picurl, x.leavedate, x.alladdr, x.labaddr, x.serviceaddr1, x.serviceaddr2, x.serviceaddr3, x.serviceaddr4, x.serviceaddr5, facebook, wiki, lineid, facebook2, lineid2)
   }
 
   def index = Action {

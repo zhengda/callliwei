@@ -4,5 +4,6 @@ GET     /googled119306f826174e7.html    controllers.Assets.at(path="/public/html
 
 GET     /about                           controllers.Application.about
 GET     /profile                           controllers.Application.profile(name:String)
+GET     /profile/:name                           controllers.Application.profile(name:String)
 GET     /list                           controllers.Application.list(q:Option[String],category:Option[String])
 GET     /category                           controllers.Application.category()

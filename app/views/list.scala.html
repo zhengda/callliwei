@@ -14,12 +14,12 @@
     <meta property="og:title" content=""/>
     <meta property="og:description" content=""/>
 
-    <title>Callliwei 立委咖電喂</title>
+    <title>Callliwei 立委咖電喂 - list all</title>
     <link href=assets/images/favicon.png rel=icon>
-    <link ref="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
+    <link ref="shortcut icon" type="image/png" href="/assets/images/favicon.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-    <link href="assets/css/docs.min.css" rel="stylesheet">
+    <link href="/assets/css/docs.min.css" rel="stylesheet">
     <style type="text/css">
         li.clw-listitem{  font-size:120%;  }
 
@@ -33,7 +33,7 @@
     <![endif]-->
 
     <script async="" src="https://www.google-analytics.com/analytics.js"></script>
-    <script async="" src="assets/js/qa.js"></script>
+    <script async="" src="/assets/js/qa.js"></script>
     <script>
     </script>
 </head>
@@ -51,7 +51,7 @@
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav">
                 <li>
-                    <form class="navbar-form" role="search" action="list">
+                    <form class="navbar-form" role="search" action="/list">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search" name="q">
                             <div class="input-group-btn">
@@ -61,10 +61,10 @@
                         </div>
                     </form>
                 </li>
-                <li><a href="list">全部列表</a></li>
+                <li><a href="/list">全部列表</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="about">About</a></li>
+                <li><a href="/about">About</a></li>
             </ul>
         </nav>
     </div>
@@ -75,7 +75,7 @@
         <ul>
             @list.map{item=>
             <li class="clw-listitem">
-                <a class="clw-listitem" href="profile?name=@item.name">@item.name</a>
+                <a class="clw-listitem" href="/profile/@item.ename">@item.name</a>
                 <a class="clw-listitem" href="mailto:@item.email">@item.email</a>
                 <a class="clw-listitem" href="tel:@item.labtel">@item.labtel</a>
                 <a class="clw-listitem" href="http://line.me/ti/p/@item.lineid">@item.lineid</a>
@@ -92,7 +92,7 @@
     <div class="container">
         <ul class="bs-docs-footer-links">
             <li><a href="https://github.com/zhengda/callliwei">GitHub</a></li>
-            <li><a href="about">About</a></li>
+            <li><a href="/about">About</a></li>
         </ul>
         <p>Licensed <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="license">CC BY 4.0</a>.
         </p>
@@ -100,9 +100,9 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>window.jQuery||document.write('<script src="assets/js/jquery.min.js"><\/script>')</script>
+<script>window.jQuery||document.write('<script src="/assets/js/jquery.min.js"><\/script>')</script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="assets/js/docs.min.js"></script>
-<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="/assets/js/docs.min.js"></script>
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
