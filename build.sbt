@@ -11,6 +11,7 @@ scalaVersion := "2.11.7"
 pipelineStages := Seq(digest)
 
 libraryDependencies ++= Seq(
+  cache,
   jdbc,
   evolutions,
   ws,
