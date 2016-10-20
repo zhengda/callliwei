@@ -14,34 +14,80 @@ import play.api.db.DBApi
 import anorm.SqlParser._
 import anorm._
 
+import java.net.URLDecoder
+
+
 /**
   * Created by Leon on 2016/10/2.
   */
 class Application @Inject()(db: Database, dbapi: DBApi) extends Controller {
 
+  def category(group: String) = Action {
+    //println("group="+group);
+    //TODO
+    //val x = List(Category("test",9,"akj kwjewj wf jkwjef"), Category("a1",99,"ijwfjiw  fwe fw  a w fw f f f"), Category("c3",3,"we fwefe"))
+    val x = List()
+    import anorm.{Macro, RowParser}
+    db.withConnection { implicit conn =>
+      val parser: RowParser[Category] = Macro.indexedParser[Category]
+      group match {
+        case "district" =>
+          //println("group match "+group)
+          val result: List[Category] = SQL("select * from district2name ").as(parser.*)
+          Ok(views.html.category(result, group))
+        case "profession" =>
+          //println("group match "+group)
+          val result: List[Category] = SQL("select * from profession2name ").as(parser.*)
+          Ok(views.html.category(result, group))
+        case _ =>
+          //println("group match nothing")
+          Ok(views.html.category(x, group))
+      }
+    }
+  }
+
   def about = Action {
     Ok(views.html.about())
   }
 
-  def category() = Action {
-    //TODO
-    val x = List(Category("test"), Category("a1"), Category("c3"))
-    Ok(views.html.category(x))
-  }
-
-  def list(q: Option[String], category: Option[String]) = Action {
+  def list(q: Option[String], category: String, group: String) = Action {
+    //println("category="+category)
     import anorm.{Macro, RowParser}
     db.withConnection { implicit conn =>
       val parser: RowParser[Liwei] = Macro.indexedParser[Liwei]
-      q match {
-        case Some(value) =>
-          val result: List[Liwei] = SQL("select * from t9a where name like {name} or ename like {ename}")
-            .on("name" -> ("%" + value + "%"), "ename" -> ("%" + value + "%")).as(parser.*)
-          Ok(views.html.list(result.map { x => repack(x) }))
-        case None =>
-          val result: List[Liwei] = SQL"select * from t9a ".as(parser.*)
-          //result.foreach(println)
-          Ok(views.html.list(result.map { x => repack(x) }))
+
+      if (category != null) {
+        val cparser: RowParser[Category] = Macro.indexedParser[Category]
+
+        group match {
+          case "district" =>
+            val cat: Category = SQL(
+              "select * from district2name where name={name}").on("name" -> category).as(cparser.single)
+            val ids: List[String] = cat.indexies.split(' ').toList
+            val result: List[Liwei] = SQL("select * from t9a where name in ({ids})")
+              .on("ids" -> ids).as(parser.*)
+            Ok(views.html.list(result.map { x => repack(x) }))
+          case "profession" =>
+            val cat: Category = SQL(
+              "select * from profession2name where name={name}").on("name" -> category).as(cparser.single)
+            val ids: List[String] = cat.indexies.split(' ').toList
+            val result: List[Liwei] = SQL("select * from t9a where name in ({ids})")
+              .on("ids" -> ids).as(parser.*)
+            Ok(views.html.list(result.map { x => repack(x) }))
+        }
+
+      } else {
+
+        q match {
+          case Some(value) =>
+            val result: List[Liwei] = SQL("select a.* from t9a a left join t9asearch b on a.name=b.name where b.content like {q} ")
+              .on("q" -> ("%" + value + "%")).as(parser.*)
+            Ok(views.html.list(result.map { x => repack(x) }))
+          case None =>
+            val result: List[Liwei] = SQL"select * from t9a ".as(parser.*)
+            //result.foreach(println)
+            Ok(views.html.list(result.map { x => repack(x) }))
+        }
       }
     }
   }
@@ -53,13 +99,12 @@ class Application @Inject()(db: Database, dbapi: DBApi) extends Controller {
       val x: Liwei = SQL(
         """
            select * from t9a where name={name} or ename={ename}
-        """).on("name" -> name,"ename" -> name).as(parser.single)
+        """).on("name" -> name, "ename" -> name).as(parser.single)
       Ok(views.html.profile(repack(x)))
     }
   }
 
   def repack(x: Liwei) = {
-    import java.net.URLDecoder
     val email = if (x.email contains "不提供") {
       ""
     } else {
@@ -90,7 +135,8 @@ class Application @Inject()(db: Database, dbapi: DBApi) extends Controller {
       lineid = lineid.substring(0, lineid.lastIndexOf("/"))
     }
 
-    val labtel = x.labtel.replace("國會辦公室：","");
+    var labtel = x.labtel
+    //labtel=labtel.replace("國會辦公室：","");
 
     val wiki = URLDecoder.decode(x.wiki, "utf8")
     LiweiX(x.term, x.name, x.ename, x.sex, x.party, x.partygroup, x.areaname, x.district, email, x.committee, x.onboarddate, x.degree, x.profession, x.experience, x.alltel, labtel, x.servicetel1, x.servicetel2, x.servicetel3, x.servicetel4, x.servicetel5, x.labfax, x.servicefax1, x.servicefax2, x.servicefax3, x.servicefax4, x.servicefax5, x.picurl, x.leavedate, x.alladdr, x.labaddr, x.serviceaddr1, x.serviceaddr2, x.serviceaddr3, x.serviceaddr4, x.serviceaddr5, facebook, wiki, lineid, facebook2, lineid2)
@@ -110,6 +156,6 @@ case class Liwei(term: String, name: String, ename: String, sex: String, party: 
 
 case class LiweiX(term: String, name: String, ename: String, sex: String, party: String, partygroup: String, areaname: String, district: String, email: String, committee: String, onboarddate: String, degree: String, profession: String, experience: String, alltel: String, labtel: String, servicetel1: String, servicetel2: String, servicetel3: String, servicetel4: String, servicetel5: String, labfax: String, servicefax1: String, servicefax2: String, servicefax3: String, servicefax4: String, servicefax5: String, picurl: String, leavedate: String, alladdr: String, labaddr: String, serviceaddr1: String, serviceaddr2: String, serviceaddr3: String, serviceaddr4: String, serviceaddr5: String, facebook: String, wiki: String, lineid: String, facebook2: String, lineid2: String)
 
-case class Category(name: String, quantity: Int = 0)
+case class Category(name: String, amount: Int = 0, indexies: String)
 
 case class Tag(name: String, quantity: Int)

@@ -49,7 +49,7 @@
         <nav class="collapse navbar-collapse" id="bs-navbar">
             <ul class="nav navbar-nav">
                 <li>
-                    <form class="navbar-form" role="search" action="list">
+                    <form class="navbar-form" role="search" action="/list">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search" name="q">
                             <div class="input-group-btn">
@@ -59,10 +59,12 @@
                         </div>
                     </form>
                 </li>
-                <li><a href="list">全部列表</a></li>
+                <li><a href="/list">全部列表</a></li>
+                <li><a href="/category/district">區域分類</a></li>
+                <li><a href="/category/profession">專長分類</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="about"
+                <li><a href="/about"
                        onclick="ga(&quot;send&quot;,&quot;event&quot;,&quot;Navbar&quot;,&quot;Community links&quot;,&quot;Blog&quot;)">About</a>
                 </li>
             </ul>
@@ -95,13 +97,20 @@
                         <strong>Hong</strong></a></div>
                     <div class="list-group-item"><a href="https://github.com/meisheep" class="relatedProjects-member">
                         <strong>meisheep</strong></a></div>
-                    <div class="list-group-item"><a href="" class="relatedProjects-member"> <strong>soidid</strong></a></div>
-                    <div class="list-group-item"><a href="" class="relatedProjects-member"> <strong>陳東</strong></a></div>
-                    <div class="list-group-item"><a href="" class="relatedProjects-member"> <strong>iflin</strong></a></div>
-                    <div class="list-group-item"><a href="" class="relatedProjects-member"> <strong>glyn</strong></a></div>
-                    <div class="list-group-item"><a href="" class="relatedProjects-member"> <strong>shiygo</strong></a></div>
-                    <div class="list-group-item"><a href="" class="relatedProjects-member"> <strong>leo424y</strong></a></div>
-                    <div class="list-group-item"><a href="" class="relatedProjects-member"> <strong>will</strong></a></div>
+                    <div class="list-group-item"><a href="" class="relatedProjects-member"> <strong>soidid</strong></a>
+                    </div>
+                    <div class="list-group-item"><a href="" class="relatedProjects-member"> <strong>陳東</strong></a>
+                    </div>
+                    <div class="list-group-item"><a href="" class="relatedProjects-member"> <strong>iflin</strong></a>
+                    </div>
+                    <div class="list-group-item"><a href="" class="relatedProjects-member"> <strong>glyn</strong></a>
+                    </div>
+                    <div class="list-group-item"><a href="" class="relatedProjects-member"> <strong>shiygo</strong></a>
+                    </div>
+                    <div class="list-group-item"><a href="" class="relatedProjects-member"> <strong>leo424y</strong></a>
+                    </div>
+                    <div class="list-group-item"><a href="" class="relatedProjects-member"> <strong>will</strong></a>
+                    </div>
                 </div>
                 <p>Get involved with Callliwei development by <a href=https://github.com/zhengda/callliwei/issues/new>opening
                     an issue</a></p>
@@ -109,14 +118,20 @@
 
                 <div class=bs-docs-section><h1 class=page-header id=relatedProjects>Related Projects</h1>
                     <h3>初期開發相關repository</h3>
-                    <p><a href="https://github.com/hong19/legislator-call">https://github.com/hong19/legislator-call</a></p>
-                    <p><a href="https://meisheep.github.io/g0v-call-liwei/">https://meisheep.github.io/g0v-call-liwei/</a></p>
+                    <p><a href="https://github.com/hong19/legislator-call">https://github.com/hong19/legislator-call</a>
+                    </p>
+                    <p>
+                        <a href="https://meisheep.github.io/g0v-call-liwei/">https://meisheep.github.io/g0v-call-liwei/</a>
+                    </p>
 
                     <h3>參考資料網</h3>
-                    <p>社團法人公民監督聯盟 <a href="https://sites.google.com/site/ccwdata/monitoring/whosmylegislator">https://sites.google.com/site/ccwdata/monitoring/whosmylegislator</a></p>
+                    <p>社團法人公民監督聯盟 <a href="https://sites.google.com/site/ccwdata/monitoring/whosmylegislator">https://sites.google.com/site/ccwdata/monitoring/whosmylegislator</a>
+                    </p>
                     <p>立委聯絡資訊 <a href="http://billy3321.github.io/lytel/">http://billy3321.github.io/lytel/</a></p>
-                    <p>「123。打。道。掛。」 <a href="http://123.g0v.today/ https://g0v.hackpad.com/123-0IiNSlxKI5a">http://123.g0v.today/ https://g0v.hackpad.com/123-0IiNSlxKI5a</a></p>
-                    <p>立法院開放資料服務平台 <a href="http://data.ly.gov.tw/getds.action?id=9">http://data.ly.gov.tw/getds.action?id=9</a></p>
+                    <p>「123。打。道。掛。」 <a href="http://123.g0v.today/ https://g0v.hackpad.com/123-0IiNSlxKI5a">http://123.g0v.today/
+                        https://g0v.hackpad.com/123-0IiNSlxKI5a</a></p>
+                    <p>立法院開放資料服務平台 <a href="http://data.ly.gov.tw/getds.action?id=9">http://data.ly.gov.tw/getds.action?id=9</a>
+                    </p>
                     <p>立委投票指南 <a href="http://vote.ly.g0v.tw/">http://vote.ly.g0v.tw/</a></p>
                 </div>
 
@@ -144,7 +159,7 @@
     <div class="container">
         <ul class="bs-docs-footer-links">
             <li><a href="https://github.com/zhengda/callliwei">GitHub</a></li>
-            <li><a href="about">About</a></li>
+            <li><a href="/about">About</a></li>
         </ul>
         <p>Licensed <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="license">CC BY
             4.0</a>.

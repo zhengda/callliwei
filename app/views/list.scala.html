@@ -22,7 +22,6 @@
     <link href="/assets/css/docs.min.css" rel="stylesheet">
     <style type="text/css">
         li.clw-listitem{  font-size:120%;  }
-
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -62,6 +61,8 @@
                     </form>
                 </li>
                 <li><a href="/list">全部列表</a></li>
+                <li><a href="/category/district">區域分類</a></li>
+                <li><a href="/category/profession">專長分類</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/about">About</a></li>
@@ -75,7 +76,7 @@
         <ul>
             @list.map{item=>
             <li class="clw-listitem">
-                <a class="clw-listitem" href="/profile/@item.ename">@item.name</a>
+                <a class="clw-listitem" href="/profile/@item.name">@item.name</a>
                 <a class="clw-listitem" href="mailto:@item.email">@item.email</a>
                 <a class="clw-listitem" href="tel:@item.labtel">@item.labtel</a>
                 <a class="clw-listitem" href="http://line.me/ti/p/@item.lineid">@item.lineid</a>

@@ -54,8 +54,19 @@ CREATE TABLE t9a (
   wiki varchar(255) DEFAULT NULL,
   lineid varchar(255) DEFAULT NULL
 ) ;
-insert into t9a select * from csvread('data/t9a.h2.csv')
+insert into t9a select * from csvread('data/t9a.h2.csv');
 
+DROP TABLE IF EXISTS district2name;
+create table district2name (name varchar(16),amount int, district varchar(1000));
+insert into district2name select * from csvread('data/district2name.h2.csv');
+
+DROP TABLE IF EXISTS profession2name;
+create table profession2name(name varchar(16),amount int, profession varchar(1000));
+insert into profession2name select * from csvread('data/profession2name.h2.csv');
+
+DROP TABLE IF EXISTS t9asearch;
+create table t9asearch (name varchar(255), content varchar(4000));
+insert into t9asearch select * from csvread('data/t9asearch.h2.csv');
 
 
 # --- !Downs
