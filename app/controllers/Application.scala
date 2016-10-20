@@ -39,6 +39,10 @@ class Application @Inject()(db: Database, dbapi: DBApi) extends Controller {
           //println("group match "+group)
           val result: List[Category] = SQL("select * from profession2name ").as(parser.*)
           Ok(views.html.category(result, group))
+        case "party" =>
+          //println("group match "+group)
+          val result: List[Category] = SQL("select * from party2name ").as(parser.*)
+          Ok(views.html.category(result, group))
         case _ =>
           //println("group match nothing")
           Ok(views.html.category(x, group))
@@ -70,6 +74,13 @@ class Application @Inject()(db: Database, dbapi: DBApi) extends Controller {
           case "profession" =>
             val cat: Category = SQL(
               "select * from profession2name where name={name}").on("name" -> category).as(cparser.single)
+            val ids: List[String] = cat.indexies.split(' ').toList
+            val result: List[Liwei] = SQL("select * from t9a where name in ({ids})")
+              .on("ids" -> ids).as(parser.*)
+            Ok(views.html.list(result.map { x => repack(x) }))
+          case "party" =>
+            val cat: Category = SQL(
+              "select * from party2name where name={name}").on("name" -> category).as(cparser.single)
             val ids: List[String] = cat.indexies.split(' ').toList
             val result: List[Liwei] = SQL("select * from t9a where name in ({ids})")
               .on("ids" -> ids).as(parser.*)

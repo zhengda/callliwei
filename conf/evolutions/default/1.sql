@@ -64,6 +64,10 @@ DROP TABLE IF EXISTS profession2name;
 create table profession2name(name varchar(16),amount int, profession varchar(1000));
 insert into profession2name select * from csvread('data/profession2name.h2.csv');
 
+DROP TABLE IF EXISTS party2name;
+create table party2name(name varchar(16),amount int, party varchar(1000));
+insert into party2name select * from csvread('data/party2name.h2.csv');
+
 DROP TABLE IF EXISTS t9asearch;
 create table t9asearch (name varchar(255), content varchar(4000));
 insert into t9asearch select * from csvread('data/t9asearch.h2.csv');
