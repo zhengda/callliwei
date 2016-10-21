@@ -1,10 +1,11 @@
 GET     /                           controllers.Application.index
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 GET     /googled119306f826174e7.html    controllers.Assets.at(path="/public/html", file="googled119306f826174e7.html")
+GET     /sitemap.xml    controllers.Assets.at(path="/public/html", file="sitemap.xml")
 
 GET     /about                           controllers.Application.about
 GET     /profile                           controllers.Application.profile(name:String)
 GET     /profile/:name                           controllers.Application.profile(name:String)
-GET     /list                           controllers.Application.list(q:Option[String],category:String=null,group:String=null)
-GET     /list/:group/:category                           controllers.Application.list(q:Option[String],category:String,group:String)
+GET     /list                           controllers.Application.list(q:Option[String],group:String=null,category:String=null)
+GET     /list/:group/:category                           controllers.Application.list(q:Option[String], group: String, category: String)
 GET     /category/:group                           controllers.Application.category(group:String)

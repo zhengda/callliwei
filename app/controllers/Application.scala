@@ -26,9 +26,7 @@ class Application @Inject()(db: Database, dbapi: DBApi, cache: CacheApi, cached:
   extends Controller {
 
   def category(group: String) = Action {
-
     import anorm.{Macro, RowParser}
-
     db.withConnection {
       implicit conn =>
         val parser: RowParser[Category] = Macro.indexedParser[Category]
@@ -54,7 +52,7 @@ class Application @Inject()(db: Database, dbapi: DBApi, cache: CacheApi, cached:
     }
   }
 
-  def list(q: Option[String], category: String, group: String) = Action {
+  def list(q: Option[String], group: String, category: String) = Action {
     import anorm.{Macro, RowParser}
     db.withConnection {
       implicit conn =>
@@ -65,32 +63,32 @@ class Application @Inject()(db: Database, dbapi: DBApi, cache: CacheApi, cached:
 
           group match {
             case "district" =>
-              val cat: Category = SQL(
-                "select * from district2name where name={name}").on("name" -> category).as(cparser.single)
+              val cat: Category = SQL("select * from district2name where name={name}")
+                .on("name" -> category).as(cparser.single)
               val ids: List[String] = cat.indexies.split(' ').toList
               val result: List[Liwei] = SQL("select * from t9a where name in ({ids})")
                 .on("ids" -> ids).as(parser.*)
               Ok(views.html.list(result.map {
                 x => repack(x)
-              }))
+              }, group, category))
             case "profession" =>
-              val cat: Category = SQL(
-                "select * from profession2name where name={name}").on("name" -> category).as(cparser.single)
+              val cat: Category = SQL("select * from profession2name where name={name}")
+                .on("name" -> category).as(cparser.single)
               val ids: List[String] = cat.indexies.split(' ').toList
               val result: List[Liwei] = SQL("select * from t9a where name in ({ids})")
                 .on("ids" -> ids).as(parser.*)
               Ok(views.html.list(result.map {
                 x => repack(x)
-              }))
+              }, group, category))
             case "party" =>
-              val cat: Category = SQL(
-                "select * from party2name where name={name}").on("name" -> category).as(cparser.single)
+              val cat: Category = SQL("select * from party2name where name={name}")
+                .on("name" -> category).as(cparser.single)
               val ids: List[String] = cat.indexies.split(' ').toList
               val result: List[Liwei] = SQL("select * from t9a where name in ({ids})")
                 .on("ids" -> ids).as(parser.*)
               Ok(views.html.list(result.map {
                 x => repack(x)
-              }))
+              }, group, category))
           }
 
         } else {
@@ -101,12 +99,12 @@ class Application @Inject()(db: Database, dbapi: DBApi, cache: CacheApi, cached:
                 .on("q" -> ("%" + value + "%")).as(parser.*)
               Ok(views.html.list(result.map {
                 x => repack(x)
-              }))
+              }, null, null))
             case None =>
               val result: List[Liwei] = SQL"select * from t9a ".as(parser.*)
               Ok(views.html.list(result.map {
                 x => repack(x)
-              }))
+              }, null, "all"))
           }
         }
     }
@@ -118,10 +116,8 @@ class Application @Inject()(db: Database, dbapi: DBApi, cache: CacheApi, cached:
       implicit conn =>
         val parser: RowParser[Liwei] = Macro.indexedParser[Liwei]
         val x: LiweiX = cache.getOrElse[LiweiX]("profile" + name) {
-          repack(SQL(
-            """
-select * from t9a where name={name} or ename={ename}
-            """).on("name" -> name, "ename" -> name).as(parser.single)
+          repack(SQL("select * from t9a where name={name} or ename={ename}")
+            .on("name" -> name, "ename" -> name).as(parser.single)
           )
           //cache.set("profile" + name, x, 10.minutes)
         }
