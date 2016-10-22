@@ -129,8 +129,13 @@ class Application @Inject()(db: Database, dbapi: DBApi, cache: CacheApi, cached:
     val email = if (x.email contains "不提供") {
       ""
     } else {
-      x.email
+      if (x.email.endsWith("/")) {
+        x.email.substring(0, x.email.length - "/".length())
+      } else {
+        x.email
+      }
     }
+
     var facebook2 = ""
     var facebook = x.facebook
     facebook = URLDecoder.decode(facebook, "utf8")
@@ -138,16 +143,36 @@ class Application @Inject()(db: Database, dbapi: DBApi, cache: CacheApi, cached:
       facebook = facebook.substring(1)
     }
     if (facebook.endsWith("\"")) {
-      facebook = facebook.substring(1, facebook.length)
+      facebook = facebook.substring(0, facebook.length - 1)
     }
     if (facebook.lastIndexOf("/https://") > -1) {
       facebook2 = facebook.substring(facebook.lastIndexOf("/https://") + 1)
       facebook = facebook.substring(0, facebook.lastIndexOf("/https://"))
     }
+
+    if (facebook2.endsWith("/")) {
+      facebook2 = facebook2.substring(0, facebook2.length - "/".length())
+    }
     facebook2 = facebook2.replace("?fref=ts", "")
-    facebook = facebook.replace("?fref=ts", "")
     facebook2 = facebook2.replace("&fref=ts", "")
+    if (facebook2.endsWith("/timeline")) {
+      facebook2 = facebook2.substring(0, facebook2.length - "/timeline".length())
+    }
+    if (facebook2.endsWith("/")) {
+      facebook2 = facebook2.substring(0, facebook2.length - "/".length())
+    }
+
+    if (facebook.endsWith("/")) {
+      facebook = facebook.substring(0, facebook.length - "/".length())
+    }
+    facebook = facebook.replace("?fref=ts", "")
     facebook = facebook.replace("&fref=ts", "")
+    if (facebook.endsWith("/timeline")) {
+      facebook = facebook.substring(0, facebook.length - "/timeline".length())
+    }
+    if (facebook.endsWith("/")) {
+      facebook = facebook.substring(0, facebook.length - "/".length())
+    }
 
     var lineid2 = ""
     var lineid = x.lineid
