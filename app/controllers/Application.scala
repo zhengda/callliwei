@@ -136,7 +136,6 @@ class Application @Inject()(db: Database, dbapi: DBApi, cache: CacheApi, cached:
       }
     }
 
-    var facebook2 = ""
     var facebook = x.facebook
     facebook = URLDecoder.decode(facebook, "utf8")
     if (facebook.startsWith("\"")) {
@@ -145,9 +144,13 @@ class Application @Inject()(db: Database, dbapi: DBApi, cache: CacheApi, cached:
     if (facebook.endsWith("\"")) {
       facebook = facebook.substring(0, facebook.length - 1)
     }
-    if (facebook.lastIndexOf("/https://") > -1) {
-      facebook2 = facebook.substring(facebook.lastIndexOf("/https://") + 1)
-      facebook = facebook.substring(0, facebook.lastIndexOf("/https://"))
+
+    var facebook2 = ""
+    for (indexString <- List("/https://", "/http://")) {
+      if (facebook.lastIndexOf(indexString) > -1) {
+        facebook2 = facebook.substring(facebook.lastIndexOf(indexString) + 1)
+        facebook = facebook.substring(0, facebook.lastIndexOf(indexString))
+      }
     }
 
     if (facebook2.endsWith("/")) {
