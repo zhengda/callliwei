@@ -17,6 +17,7 @@ libraryDependencies ++= Seq(
   ws,
   "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test,
   "com.typesafe.play" %% "anorm" % "2.5.0",
+  "ai.x" %% "play-json-extensions" % "0.8.0",
 //  "com.typesafe.play" %% "play-slick" % "1.1.1",
 //  "com.typesafe.play" %% "play-slick-evolutions" % "1.1.1",
   cache
