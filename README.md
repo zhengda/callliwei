@@ -3,7 +3,11 @@ This is a exercise I have done by using Scala with Play framework.
 The main function of the application is an address book which collects legistrator's contact information and metadata in Taiwan. Further more, it provide convenient ways to access the information.
 
 #Project information and contributors
-see http://beta.hackfoldr.org/callliwei
+See http://beta.hackfoldr.org/callliwei
+
+#Endpoint
+It is temporarily on http://callliwei.hopto.org which is free domain provided by ddns.org.  
+The plan of moving the endpoint to a permanent link is ongoing.
 
 #Enviroment
 java 1.8.0_92  
@@ -18,7 +22,7 @@ anorm
 h2  
 bootstrap  
 GA  
-see build.sbt in details.
+See build.sbt in details.
 
 #sitemap
 /sitemap.xml
@@ -50,8 +54,8 @@ TODO
 
 #Dataset
 data/t9a.h2.csv is the newest dataset used in system.  
-alternatively, you can fetch all dataset in json on /api/list  
-data/README.md for more information.
+Alternatively, you can fetch all dataset in json on /api/list  
+See data/README.md for more information.
 
 #System architecture
 ##database
