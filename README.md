@@ -24,22 +24,22 @@ see build.sbt in details.
 /sitemap.xml
 
 #API
-/api/v1
-/api (always pointing to the newest version, suck as /api/v1)
-/api/profile/{legistrator-name}
-/api/list
-/api/list?q={query-string}
-/api/list?q=黃國
-/api/list/district/{district-name}
-/api/list/district/台北市
-/api/list/profession/{profession-name}
-/api/list/profession/交通
-/api/list/party/{party-name}
-/api/list/party/時代力量
-/api/category/{category-name}
-/api/category/party
-/api/category/profession
-/api/category/district
+/api/v1  
+/api (always pointing to the newest version, suck as /api/v1)  
+/api/profile/{legistrator-name}  
+/api/list  
+/api/list?q={query-string}  
+/api/list?q=黃國  
+/api/list/district/{district-name}  
+/api/list/district/台北市  
+/api/list/profession/{profession-name}  
+/api/list/profession/交通  
+/api/list/party/{party-name}  
+/api/list/party/時代力量  
+/api/category/{category-name}  
+/api/category/party  
+/api/category/profession  
+/api/category/district  
 
 
 #Installation
@@ -49,17 +49,17 @@ TODO
 TODO
 
 #Dataset
-data/t9a/h2.csv is the newest dataset used in system.  
+data/t9a.h2.csv is the newest dataset used in system.  
 alternatively, you can fetch all dataset in json on /api/list  
 data/README.md for more information.
 
 #System architecture
 ##database
-h2 database
+h2 database  
 ##Backend
-scala
-play
-anorm
+scala  
+play  
+anorm  
 ##Brontend
-bootstrap
+bootstrap  
 
