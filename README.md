@@ -1,11 +1,10 @@
 callliwei project
 ---
-#preface
-This is a exercise I have done by using Scala with Play framework. 
-The main function of the application is an address book which collects legistrator's contact information and metadata in Taiwan.  
-Further more, it provide convenient ways to access the information.
+#Preface
+This is a exercise I have done by using Scala with Play framework.  
+The main function of the application is an address book which collects legistrator's contact information and metadata in Taiwan. Further more, it provide convenient ways to access the information.
 
-#project information
+#Project information and contributors
 see http://beta.hackfoldr.org/callliwei
 
 #enviroment
@@ -15,7 +14,7 @@ sbt 0.13.11
 activator 1.3.10  
 play 2.5.8
 
-#framework and components
+#Framework and components
 play  
 anorm  
 h2  
@@ -26,7 +25,7 @@ see build.sbt in details.
 #sitemap
 /sitemap.xml
 
-#api
+#API
 /api/v1
 /api (always pointing to the newest version, suck as /api/v1)
 /api/profile/{legistrator-name}
@@ -45,24 +44,24 @@ see build.sbt in details.
 /api/category/district
 
 
-#installation
+#Installation
 TODO
 
-#run it
+#Run it
 TODO
 
-#dataset
+#Dataset
 data/t9a/h2.csv is the newest dataset used in system.  
 alternatively, you can fetch all dataset in json on /api/list  
 data/README.md for more information.
 
-#system architecture
+#System architecture
 ##database
 h2 database
-##backend
+##Backend
 scala
 play
 anorm
-##frontend
+##Brontend
 bootstrap
 
