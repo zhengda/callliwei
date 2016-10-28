@@ -25,7 +25,7 @@ see build.sbt in details.
 
 #API
 /api/v1  
-/api (always pointing to the newest version, suck as /api/v1)  
+/api (always pointing to the newest version, such as /api/v1)  
 /api/profile/{legistrator-name}  
 /api/list  
 /api/list?q={query-string}  
