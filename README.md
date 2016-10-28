@@ -7,7 +7,7 @@ The main function of the application is an address book which collects legistrat
 #Project information and contributors
 see http://beta.hackfoldr.org/callliwei
 
-#enviroment
+#Enviroment
 java 1.8.0_92  
 scala 2.11.8  
 sbt 0.13.11  
