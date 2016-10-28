@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link href="/assets/css/docs.min.css" rel="stylesheet">
     <style type="text/css">
-        a.clw-category{  font-size:150%;  }
+        a.clw-category{  font-size:120%;  }
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -75,7 +75,7 @@
     <div class="container">
         <ul>
             @list.map{item=>
-            <a class="clw-category" xxsize="@item.amount" href="/list/@group/@item.name">@item.name (@item.amount)</a>
+            <li><a class="clw-category" xxsize="@item.amount" href="/list/@group/@item.name">@item.name @if(item.amount>1){(@item.amount)}</a></li>
             }
         </ul>
     </div>
