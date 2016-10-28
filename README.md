@@ -1,5 +1,3 @@
-callliwei project
----
 #Preface
 This is a exercise I have done by using Scala with Play framework.  
 The main function of the application is an address book which collects legistrator's contact information and metadata in Taiwan. Further more, it provide convenient ways to access the information.
