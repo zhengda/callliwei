@@ -69,6 +69,7 @@ cd calliwei-1.0.SNAPSHOT
 ```
 ##run it
 ```
+set java_tool_optinos=-Dfile.encoding=UTF8 -Dinput.encoding=UTF8
 bin\callliwei
 #ctrl-c to terminal service
 ```
