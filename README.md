@@ -45,12 +45,23 @@ See build.sbt in details.
 /api/category/profession  
 /api/category/district  
 
-
 #Installation
-TODO
+git clone git@github.com:zhengda/callliwei.git
+cd callliwei
+**set java_tool_optinos=-Dfile.encoding=UTF8 -Dinput.encoding=UTF8**
+activator clean compile
+##run under dev mode
+activator run
+##run under prod mode
+activator start
 
-#Run it
-TODO
+#Deployment
+activator dist
+unzip target/universal/calliwei-1.0.SNAPSHOT.zip
+cd calliwei-1.0.SNAPSHOT
+##run it
+bin/callliwei
+**ctrl-c to terminal service**
 
 #Dataset
 data/t9a.h2.csv is the newest dataset used in system.  

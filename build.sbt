@@ -23,8 +23,6 @@ libraryDependencies ++= Seq(
   cache
 )
 
-
-//fuck sbt/activator
-//import com.typesafe.sbt.packager.Keys._
-//scriptClasspath := Seq("*")
-//com.typesafe.sbt.packager.Keys.scriptClasspath := Seq("*")
+mappings in Universal ++=
+(baseDirectory.value / "data" * "*" get) map
+    (x => x -> ("data/" + x.getName))
