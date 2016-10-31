@@ -63,14 +63,14 @@ activator start
 
 #Deployment
 ```
-activator dist
-unzip target/universal/calliwei-1.0.SNAPSHOT.zip
+activator clean compile dist
+unzip target\universal\calliwei-1.0.SNAPSHOT.zip
 cd calliwei-1.0.SNAPSHOT
 ```
 ##run it
 ```
-bin/callliwei
-\#ctrl-c to terminal service
+bin\callliwei
+#ctrl-c to terminal service
 ```
 
 #Dataset
