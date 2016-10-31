@@ -49,24 +49,28 @@ See build.sbt in details.
 ```
 git clone git@github.com:zhengda/callliwei.git
 cd callliwei
-**set java_tool_optinos=-Dfile.encoding=UTF8 -Dinput.encoding=UTF8**
+set java_tool_optinos=-Dfile.encoding=UTF8 -Dinput.encoding=UTF8
 activator clean compile
 ```
 ##run under dev mode
+```
 activator run
+```
 ##run under prod mode
+```
 activator start
+```
 
 #Deployment
-``
+```
 activator dist
 unzip target/universal/calliwei-1.0.SNAPSHOT.zip
 cd calliwei-1.0.SNAPSHOT
-``
+```
 ##run it
-``
+```
 bin/callliwei
-**ctrl-c to terminal service**
+\#ctrl-c to terminal service
 ```
 
 #Dataset
