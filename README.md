@@ -71,7 +71,7 @@ cd calliwei-1.0.SNAPSHOT
 ```
 set java_tool_optinos=-Dfile.encoding=UTF8 -Dinput.encoding=UTF8
 bin\callliwei
-#ctrl-c to terminal service
+#ctrl-c to terminate service
 ```
 
 #Dataset
