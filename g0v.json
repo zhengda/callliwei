@@ -1,0 +1,20 @@
+{
+  "repo": "zhengda/callliwei",
+  "author": "Leon Lin",
+  "status": "v1",
+  "name": "callliwei",
+  "name_zh": "立委咖電喂",
+  "description": "A set of legislator's contact information",
+  "description_zh": "立法委員連絡與相闗資訊集合",
+  "homepage": "http://callliwei.hopto.org",
+  "thumbnail": "https://raw.githubusercontent.com/zhengda/callliwei/master/doc/callliwei_screen_snapshot_thumbnail.png",
+  "document": "https://github.com/zhengda/callliwei",
+  "repository": "https://github.com/zhengda/callliwei",
+  "licenses": "CC BY 4.0",
+  "keywords": "legistrator, liwei, ...",
+  "audience": "everyone",
+  "products": "http://callliwei.hopto.org",
+  "partOf": "none",
+  "contributors": "Fumi Leon Hong meisheep soidid 陳東 iflin glyn shiygo will leo424y",
+  "needs": "none"
+}
