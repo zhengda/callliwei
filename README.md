@@ -89,3 +89,6 @@ anorm
 ##Brontend
 bootstrap  
 
+## g0v domain http://call.ly.g0v.tw
+https://github.com/g0v/domain/issues/7
+2017/3/14 call.ly.g0v.tw綁定CNAME到callliwei.hopto.org
