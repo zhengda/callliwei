@@ -1,22 +1,22 @@
-#Preface
+# Preface
 This is an exercise I have done by using Scala with Play framework.  
 The main function of the application is an address book which collects legistrator's contact information and metadata in Taiwan. Further more, it provide convenient ways to access the information.
 
-#Project information and contributors
+# Project information and contributors
 See http://beta.hackfoldr.org/callliwei
 
-#Endpoint
+# Endpoint
 It is temporarily on http://callliwei.hopto.org which is free domain provided by ddns.org.  
 The plan of moving the endpoint to a permanent link is ongoing.
 
-#Enviroment
+# Enviroment
 java 1.8.0_92  
 scala 2.11.8  
 sbt 0.13.11  
 activator 1.3.10  
 play 2.5.8
 
-#Framework and components
+# Framework and components
 play  
 anorm  
 h2  
@@ -24,10 +24,10 @@ bootstrap
 GA  
 See build.sbt in details.
 
-#sitemap
+# sitemap
 /sitemap.xml
 
-#API
+# API
 /api/v1  
 /api (always pointing to the newest version, such as /api/v1)  
 /api/profile/{legistrator-name}  
@@ -45,48 +45,48 @@ See build.sbt in details.
 /api/category/profession  
 /api/category/district  
 
-#Installation
+# Installation
 ```
 git clone git@github.com:zhengda/callliwei.git
 cd callliwei
 set java_tool_optinos=-Dfile.encoding=UTF8 -Dinput.encoding=UTF8
 activator clean compile
 ```
-##run under dev mode
+## run under dev mode
 ```
 activator run
 ```
-##run under prod mode
+## run under prod mode
 ```
 activator start
 ```
 
-#Deployment
+# Deployment
 ```
 activator clean compile dist
 unzip target\universal\calliwei-1.0.SNAPSHOT.zip
 cd calliwei-1.0.SNAPSHOT
 ```
-##run it
+## run it
 ```
 set java_tool_optinos=-Dfile.encoding=UTF8 -Dinput.encoding=UTF8
 bin\callliwei
 #ctrl-c to terminate service
 ```
 
-#Dataset
+# Dataset
 data/t9a.h2.csv is the newest dataset used in system.  
 Alternatively, you can fetch all dataset in json on /api/list  
 See data/README.md for more information.
 
-#System architecture
-##database
+# System architecture
+## database
 h2 database  
-##Backend
+## Backend
 scala  
 play  
 anorm  
-##Brontend
+## Brontend
 bootstrap  
 
 ## g0v domain http://call.ly.g0v.tw
